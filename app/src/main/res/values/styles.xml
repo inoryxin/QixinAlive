@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  浅色主题：页面本身是粉色系的浅色设计（自带暗色模式开关），
+  所以窗口底色和状态栏也跟着浅色走。
+-->
+<resources>
+    <style name="AppTheme" parent="@android:style/Theme.Material.Light.NoActionBar">
+        <item name="android:windowBackground">#FFF5FA</item>
+        <item name="android:colorAccent">#FF9DC4</item>
+        <item name="android:navigationBarColor">#FFF5FA</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+</resources>

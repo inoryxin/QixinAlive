@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  桌面小组件 4x2（横向长条）。内容就是常驻通知那两行：
+    第一行 = 手机 show_name + app_name + 电量
+    第二行 = 电脑 show_name + app_name
+
+  视觉：深色毛玻璃卡片 + 粉色描边，圆角 24dp；
+  两行前面各加一个小圆点作「设备指示灯」，层级比纯文字清楚。
+  RemoteViews 只支持 LinearLayout / FrameLayout / TextView / ImageView 等少数控件，
+  这里只用这些，绝对不用 ConstraintLayout（RemoteViews 不支持）。
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/widget_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/widget_bg"
+    android:orientation="vertical"
+    android:paddingStart="14dp"
+    android:paddingEnd="12dp"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp">
+
+    <!-- 顶行：品牌 + 时间 + 刷新 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingEnd="5dp"
+            android:text="@string/widget_glyph"
+            android:textColor="#FF9DC4"
+            android:textSize="10sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            android:textColor="#FFD0E3"
+            android:textSize="10sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/widget_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:gravity="end"
+            android:maxLines="1"
+            android:paddingEnd="8dp"
+            android:text="@string/widget_waiting"
+            android:textColor="#8CFFE6F1"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/widget_refresh"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:background="@drawable/widget_refresh_bg"
+            android:gravity="center"
+            android:text="@string/widget_refresh_glyph"
+            android:textColor="#FFE6F1"
+            android:textSize="13sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- 第一行：手机（含电量） -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingEnd="7dp"
+            android:text="@string/widget_dot"
+            android:textColor="#FF9DC4"
+            android:textSize="9sp" />
+
+        <TextView
+            android:id="@+id/widget_line1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@string/widget_waiting"
+            android:textColor="#FFF3E9F0"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- 第二行：电脑 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingEnd="7dp"
+            android:text="@string/widget_dot"
+            android:textColor="#FFC9A227"
+            android:textSize="9sp" />
+
+        <TextView
+            android:id="@+id/widget_line2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@string/widget_waiting"
+            android:textColor="#DEFFE6F1"
+            android:textSize="13sp" />
+    </LinearLayout>
+</LinearLayout>

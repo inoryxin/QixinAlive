@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">祈歆 Alive</string>
+
+    <!-- 通知 / 状态 -->
+    <string name="status_starting">正在启动…</string>
+    <string name="status_ok">已更新于 %1$s</string>
+    <string name="status_failed">抓取失败：%1$s</string>
+    <string name="status_from_page">来自页面数据</string>
+
+    <!-- 电池优化 -->
+    <string name="batt_title">让常驻通知稳定运行</string>
+    <string name="batt_msg">系统可能会在后台限制本应用，导致通知停止刷新。\n建议允许「不受电池优化限制」。</string>
+    <string name="batt_go">去设置</string>
+    <string name="later">稍后</string>
+
+    <!-- 桌面小组件 -->
+    <string name="widget_desc">显示祈歆的手机电量与电脑当前应用（和常驻通知一样的两行）</string>
+    <string name="widget_refresh">刷新</string>
+    <string name="widget_refresh_glyph">↻</string>
+    <string name="widget_glyph">✿</string>
+    <string name="widget_dot">●</string>
+    <string name="widget_waiting">等待数据…</string>
+    <string name="widget_preview_line1">祈歆の📱 bilibili · 96%</string>
+    <string name="widget_preview_line2">祈歆的💻 LocalSend</string>
+</resources>

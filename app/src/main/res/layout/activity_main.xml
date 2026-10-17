@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  整个界面只有网页本身：没有工具栏、没有状态行、没有任何设置入口。
+  系统栏的内边距在 MainActivity 里按 WindowInsets 动态留出来，
+  所以不管系统是否强制边到边（Android 15 / targetSdk 35），
+  网页都不会被状态栏和导航栏挡住。
+-->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF5FA">
+
+    <WebView
+        android:id="@+id/webview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</FrameLayout>

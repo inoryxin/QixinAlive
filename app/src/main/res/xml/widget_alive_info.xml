@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  桌面小组件：默认 4 格宽 × 2 格高（横向长条），正好放下那两行。
+
+  尺寸必须和目标格数一致，否则启动器会直接拒绝添加（报「无法添加微件」）：
+    Android 12+ 用 targetCellWidth/targetCellHeight 指定格数；
+    11 及以下按 minWidth/minHeight 折算，公式大致是 74dp 一格。
+  所以 4 格宽 ≈ 294dp，2 格高 ≈ 146dp，两边给同一个答案，不打架。
+-->
+<appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
+    android:description="@string/widget_desc"
+    android:initialLayout="@layout/widget_alive"
+    android:minHeight="146dp"
+    android:minResizeHeight="110dp"
+    android:minResizeWidth="146dp"
+    android:minWidth="294dp"
+    android:previewLayout="@layout/widget_alive_preview"
+    android:resizeMode="horizontal|vertical"
+    android:targetCellHeight="2"
+    android:targetCellWidth="4"
+    android:updatePeriodMillis="1800000"
+    android:widgetCategory="home_screen" />
